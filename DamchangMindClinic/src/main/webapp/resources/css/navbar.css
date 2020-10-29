@@ -17,10 +17,11 @@
 
 #navbar {
 	width: 100%;
+	background-color: rgb(44, 62, 80);
 }
 
 .logo>img {
-	height: 100px;
+	height: 90px;
 }
 
 .depth01 {
@@ -33,14 +34,13 @@
 }
 
 .depth01>li {
-	min-width: 200px;
-	margin: 10px auto;
-	font-size: 30px;
+	min-width: 280px;
+	margin: 0px auto;
+	font-size: 20px;
 }
 
 .depth01>li>a {
-	padding: 30px 5px;
-	line-height: 100px;
+	line-height: 90px;
 }
 
 
@@ -51,6 +51,6 @@
 
 .depth02>li {
 	padding : 10px 0;
-	font-size: 20px;
+	font-size: 15px;
 	padding: 10px 0;
 }
