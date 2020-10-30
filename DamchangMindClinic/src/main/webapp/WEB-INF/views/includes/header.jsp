@@ -6,16 +6,26 @@
   <!-- CSSs -->
   <link href="resources/css/normalize.css" rel="stylesheet" type="text/css" />
   <link href="resources/css/navbar.css" rel="stylesheet" type="text/css" />
+ 
   <!--bootstrap css-->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-  <!-- carousel -->
+ 
+  <!-- owl carousel -->
+  <link href="resources/css/owl.carousel.min.css" rel="stylesheet" type="text/css" />
+  <link href="resources/css/owl.theme.default.min.css" rel="stylesheet" type="text/css" />
+  
+  <!-- slick carousel -->
   <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+  
   
   <!-- JSs -->
   <!--jquery.js / bootstrap.js-->
   <script src="https://code.jquery.com/jquery-3.4.1.min.js" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
-  <!-- carousel -->
+  <!-- owl carousel -->
+  <script src="resources/js/owl.carousel.min.js" crossorigin="anonymous"></script>
+  
+  <!-- slick carousel -->
   <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 </head>
 
