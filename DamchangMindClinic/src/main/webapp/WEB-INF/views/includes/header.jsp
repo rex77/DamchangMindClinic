@@ -1,11 +1,12 @@
-<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" language="java" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <html>
-<meta charset="utf8"/>
+<meta charset="utf-8">
 <head>
   <title>담창 정신건강의학과</title>
   <!-- CSSs -->
   <link href="resources/css/normalize.css" rel="stylesheet" type="text/css" />
   <link href="resources/css/navbar.css" rel="stylesheet" type="text/css" />
+  <link href="resources/css/footer.css" rel="stylesheet" type="text/css" />
  
   <!--bootstrap css-->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
