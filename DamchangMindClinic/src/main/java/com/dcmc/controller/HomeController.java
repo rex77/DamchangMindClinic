@@ -36,4 +36,14 @@ public class HomeController {
 		return "index";
 	}
 	
+	
+	@RequestMapping(value = "/greetings", method = RequestMethod.GET)
+	public String greetings(Model model) {
+		return "introduction01";
+	}
+	@RequestMapping(value = "/team", method = RequestMethod.GET)
+	public String team(Model model) {
+		return "introduction02";
+	}
+	
 }

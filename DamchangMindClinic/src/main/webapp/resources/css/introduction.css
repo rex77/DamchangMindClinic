@@ -1,0 +1,29 @@
+#wrapper {
+	margin-top:100px;
+	font-family: 'Noto Sans KR', sans-serif;
+}
+
+#subtitle {
+	text-align:center;
+	padding: 75px 0;
+	background-image: url("../img/introduction_subtitle.jpg");
+	background-position : center;
+	font-size: 30px;
+}
+
+
+#content-wrapper {
+	margin: 100px auto;
+	text-align: center;
+}
+
+#content-wrapper > img {
+	width: 800px;
+	margin : 0 auto;
+	margin-top : 30px;
+	box-shadow: 0px 0px 10px #dddddd; 
+}
+
+#content-wrapper > img:first-child {
+	margin-top:0;
+}

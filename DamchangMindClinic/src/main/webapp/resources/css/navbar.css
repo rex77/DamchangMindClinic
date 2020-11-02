@@ -2,6 +2,10 @@
 	url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@500&display=swap')
 	;
 
+body {
+	font-family: 'Noto Sans KR', sans-serif;
+}
+
 .navbar a {
 	font-family: 'Noto Sans KR', sans-serif;
 	color: #ffffff;
@@ -36,7 +40,7 @@
 .depth01>li {
 	min-width: 280px;
 	margin: 0px auto;
-	font-size: 20px;
+	font-size: 18px;
 }
 
 .depth01>li>a {

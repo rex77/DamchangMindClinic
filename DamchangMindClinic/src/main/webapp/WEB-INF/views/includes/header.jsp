@@ -34,11 +34,11 @@
   <div id="header">
   <nav id="navbar" class="navbar navbar-expand fixed-top">
     <ul class="navbar-nav depth01">
-    <li><a class="logo" href="index.jsp"><img src="resources/img/logo_white.png" alt="ë´ì°½ ì ì ê±´ê°ìíê³¼"></a></li>
+    <li><a class="logo" href="/"><img src="resources/img/logo_white.png" alt="로고"></a></li>
       <li class="nav-item"><a href="#">담창정신건강의학과소개</a>
         <ul class="depth02">
-          <li><a href="#">인삿말</a></li>
-          <li><a href="#">의료진 소개</a></li>
+          <li><a href="/greetings">인삿말</a></li>
+          <li><a href="/team">의료진 소개</a></li>
           <li><a href="#">오시는 길</a></li>
           <li><a href="#">병원 둘러보기</a></li>
         </ul>
