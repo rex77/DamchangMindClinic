@@ -3,19 +3,21 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <%@include file="includes/header.jsp"%>
-<link href="resources/css/introduction.css" rel="stylesheet" type="text/css" />
+<link href="resources/css/adult.css" rel="stylesheet" type="text/css" />
 <div id="wrapper">
 <div id="subtitle">
-의료진 소개
+공황장애
 </div> 
 <div id="content-wrapper">
-<img alt="담창" src="resources/img/damchang.png"/>
+<img alt="안내문" src="resources/img/notice.png">
 <br>
-<img alt="담창 스케쥴" src="resources/img/damchang2.png"/>
+<img alt="공황장애" src="resources/img/panic.png">
 <br>
-<img alt="Rex" src="resources/img/rex.png"/>
+<img alt="공황장애2" src="resources/img/panic2.png">
 <br>
-<img alt="Rex" src="resources/img/rex2.png"/>
+<img alt="공황장애3" src="resources/img/panic3.png">
+<br>
+<img alt="공황장애4" src="resources/img/panic4.png">
 </div>
 
 </div>

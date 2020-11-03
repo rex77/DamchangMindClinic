@@ -21,7 +21,7 @@
 <div id="wrapper">
 	<div id="section02">
 		<ul class="banner4-wrapper">
-			<li class="banner4"><a href="#"><img
+			<li class="banner4"><a href="/team"><img
 					src="resources/img/section02_banner1.png" /></a></li>
 			<li class="banner4"><a href="#"><img
 					src="resources/img/section02_banner2.png" /></a></li>

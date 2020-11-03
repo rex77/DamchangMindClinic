@@ -41,9 +41,57 @@ public class HomeController {
 	public String greetings(Model model) {
 		return "introduction01";
 	}
+	
 	@RequestMapping(value = "/team", method = RequestMethod.GET)
 	public String team(Model model) {
 		return "introduction02";
+	}
+	
+	@RequestMapping(value = "/map", method = RequestMethod.GET)
+	public String map(Model model) {
+		return "introduction03";
+	}
+	
+	@RequestMapping(value = "/gallery", method = RequestMethod.GET)
+	public String gallery(Model model) {
+		return "introduction04";
+	}
+	
+	
+	@RequestMapping(value = "/anxiety", method = RequestMethod.GET)
+	public String anxiety(Model model) {
+		return "adult01";
+	}
+	
+	@RequestMapping(value = "/panic", method = RequestMethod.GET)
+	public String panic(Model model) {
+		return "adult02";
+	}
+	
+	@RequestMapping(value = "/schizophrenia", method = RequestMethod.GET)
+	public String schizophrenia(Model model) {
+		return "adult03";
+	}
+	
+	@RequestMapping(value = "/dementia", method = RequestMethod.GET)
+	public String dementia(Model model) {
+		return "adult04";
+	}
+	
+	@RequestMapping(value = "/insomnia", method = RequestMethod.GET)
+	public String insomnia(Model model) {
+		return "adult05";
+	}
+	
+	
+	@RequestMapping(value = "/adhd", method = RequestMethod.GET)
+	public String adhd(Model model) {
+		return "child01";
+	}
+	
+	@RequestMapping(value = "/asperger", method = RequestMethod.GET)
+	public String asperger(Model model) {
+		return "child02";
 	}
 	
 }

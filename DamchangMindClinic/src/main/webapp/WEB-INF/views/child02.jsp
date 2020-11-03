@@ -3,19 +3,21 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <%@include file="includes/header.jsp"%>
-<link href="resources/css/introduction.css" rel="stylesheet" type="text/css" />
+<link href="resources/css/child.css" rel="stylesheet" type="text/css" />
 <div id="wrapper">
 <div id="subtitle">
-의료진 소개
+아스퍼거 증후군
 </div> 
 <div id="content-wrapper">
-<img alt="담창" src="resources/img/damchang.png"/>
+<img alt="안내문" src="resources/img/notice.png">
 <br>
-<img alt="담창 스케쥴" src="resources/img/damchang2.png"/>
+<img alt="asperger" src="resources/img/asperger.png">
 <br>
-<img alt="Rex" src="resources/img/rex.png"/>
+<img alt="asperger2" src="resources/img/asperger2.png">
 <br>
-<img alt="Rex" src="resources/img/rex2.png"/>
+<img alt="asperger3" src="resources/img/asperger3.png">
+<br>
+<img alt="asperger4" src="resources/img/asperger4.png">
 </div>
 
 </div>
