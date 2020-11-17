@@ -1,0 +1,48 @@
+package com.dcmc.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.dcmc.domain.NoticeDAO;
+import com.dcmc.service.NoticeService;
+
+import lombok.extern.log4j.Log4j;
+
+@Log4j
+@Controller
+@RequestMapping("/notice/*")
+public class NoticeController {
+	@Autowired
+	NoticeService ns;
+	
+	@GetMapping("/list") 
+	public void getList() {
+		log.info("noticeController getList(): "+ns.getList());
+	}
+	
+	@GetMapping("/get") 
+	public void getBoard(int bno) {
+		log.info("noticeController getBoard(): "+ns.get(bno));
+	}
+	
+	@PostMapping("/register") 
+	public void register(NoticeDAO notice) {
+		System.out.println("notice: " + notice.getContent());
+		log.info("noticeController register(): ");
+		notice.setShowYn("y");
+		ns.register(notice);
+	}
+	
+	@GetMapping("/remove") 
+	public void remove(int bno) {
+		log.info("noticeController remove(): "+ns.remove(bno));
+	}
+	
+	@GetMapping("")
+	public void modify(NoticeDAO notice) {
+		log.info("noticeController modify(): "+ns.modify(notice));
+	}
+}

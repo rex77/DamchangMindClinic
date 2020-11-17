@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dcmc.mapper.NoticeMapper">
+	
+	<select id="getList" resultType="com.dcmc.domain.NoticeDAO">
+		select * from notice
+	</select>
+	
+	<insert id="insert">
+		insert into notice (bno, title, content, show_yn, writer, register_date)
+		values (seq_notice.nextval , #{title}, #{content}, #{showYn}, #{writer}, SYSDATE )
+	</insert>
+	
+	<select id="read" resultType="com.dcmc.domain.NoticeDAO">
+		select * from notice where bno = #{bno}
+	</select>
+	
+	<update id="update">
+		update notice
+		set title = #{title},
+		content = #{content},
+		writer = #{writer},
+		show_yn = #{showYn}
+		where
+		bno = #{bno}
+	</update>
+	
+	<delete id="delete">
+		delete from notice where bno = #{bno}
+	</delete>
+	
+</mapper>
