@@ -6,6 +6,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.dcmc.domain.NoticeDAO;
 import com.dcmc.service.NoticeService;
@@ -27,8 +28,10 @@ public class NoticeController {
 	}
 	
 	@GetMapping("/view") 
-	public void viewBoard(int bno) {
-		log.info("noticeController getBoard(): "+ns.get(bno));
+	public String viewBoard(@RequestParam("bno") int bno, Model model) {
+		log.info("NoticeController: viewBoard()");
+		model.addAttribute("board", ns.get(bno));
+		return "notice_view";
 	}
 	
 	@PostMapping("/register") 

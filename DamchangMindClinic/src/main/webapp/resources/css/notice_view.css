@@ -1,0 +1,62 @@
+@charset "UTF-8";
+
+#wrapper {
+	width: 100%;
+	margin-top: 100px;
+	font-family: 'Noto Sans KR', sans-serif;
+}
+
+#subtitle {
+	color: rgb(44, 62, 80);
+	text-align: center;
+	padding: 75px 0;
+	font-size: 30px;
+	background-image: url('/resources/img/notice-background.jpg');
+	background-position: center;
+}
+
+#content-wrapper {
+	width: 1200px;
+	margin: 0 auto;
+	text-align:right;
+}
+
+#title, #content {
+	text-align: center;
+}
+
+#title {
+	margin-top: 20px;
+	 padding : 15px 0;
+	background-color: #dddddd;
+	padding: 15px 0;
+}
+
+#title > div {
+	display: inline-block;
+}
+
+.title01 {
+	width:75%;
+	font-size: 20px;
+}
+
+.title02 {
+	width:10%;
+	font-size: 15px;
+}
+
+.title03 {
+	width: 10%;
+	font-size: 15px;
+}
+
+#content {
+	border-bottom: 1px solid #dddddd;
+	padding : 30px 0;
+	margin-bottom: 10px;
+}
+
+#tolist {
+	margin-bottom: 20px;
+}
