@@ -1,0 +1,22 @@
+@charset "UTF-8";
+
+<!--list-->
+#wrapper {
+	width : 1200px;
+	margin : 100px auto;
+}
+
+
+#subtitle {
+	text-align:center;
+	padding: 75px 0;
+	font-size: 30px;
+	background-image: url('notice-background.png');
+}
+
+thead > tr > th:nth-child(1) {width: 15%;}
+thead > tr > th:nth-child(2) {width: 50%;}
+thead > tr > th:nth-child(3) {width: 15%;}
+thead > tr > th:nth-child(4) {width: 20%;}
+
+<!--view-->

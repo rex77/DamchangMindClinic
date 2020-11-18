@@ -2,6 +2,7 @@ package com.dcmc.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -19,12 +20,14 @@ public class NoticeController {
 	NoticeService ns;
 	
 	@GetMapping("/list") 
-	public void getList() {
-		log.info("noticeController getList(): "+ns.getList());
+	public String getList(Model model) {
+		log.info("NoticeController: getList()");
+		model.addAttribute("list", ns.getList());
+		return "notice";
 	}
 	
-	@GetMapping("/get") 
-	public void getBoard(int bno) {
+	@GetMapping("/view") 
+	public void viewBoard(int bno) {
 		log.info("noticeController getBoard(): "+ns.get(bno));
 	}
 	

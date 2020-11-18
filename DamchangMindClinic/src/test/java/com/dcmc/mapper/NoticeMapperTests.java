@@ -39,6 +39,7 @@ public class NoticeMapperTests {
 		notice.setBno(14);
 		notice.setTitle("바뀐 5678");
 		notice.setContent("바뀌어버린 5678");
+		notice.setWriter("admin");
 		notice.setShowYn("y");
 		nm.update(notice);
 	}

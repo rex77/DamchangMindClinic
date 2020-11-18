@@ -1,12 +1,14 @@
 package com.dcmc.domain;
 
+import java.util.Date;
+
 public class NoticeDAO {
 	int bno;
 	String title;
 	String content;
 	String showYn;
 	String writer;
-	String registerDate;
+	Date registerDate;
 	public int getBno() {
 		return bno;
 	}
@@ -37,10 +39,10 @@ public class NoticeDAO {
 	public void setWriter(String writer) {
 		this.writer = writer;
 	}
-	public String getRegisterDate() {
+	public Date getRegisterDate() {
 		return registerDate;
 	}
-	public void setRegisterDate(String registerDate) {
+	public void setRegisterDate(Date registerDate) {
 		this.registerDate = registerDate;
 	}
 	
