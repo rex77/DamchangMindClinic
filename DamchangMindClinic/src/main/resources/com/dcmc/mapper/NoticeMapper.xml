@@ -12,10 +12,20 @@
 	</resultMap>
 
 	<select id="getList" resultMap="result">
-		select *
+		select /*+ INDEX_DESC(notice XPK공지사항) */ *
 		from notice
-		order by bno desc
-	</select>
+		</select>
+		
+	<select id="getListWithCri" resultMap="result">
+		<![CDATA[
+		select bno, title, content, writer, register_date
+		from (
+		select /*+ INDEX_DESC(notice XPK공지사항) */ rownum rn, bno, title, content, show_yn, writer, register_date
+		from notice where show_yn='y' AND rownum <= #{pageNum} * #{amount}
+		)
+		where rn > (#{pageNum} - 1) * #{amount} 
+		]]>
+		</select>
 
 	<insert id="insert">
 		insert into notice (bno, title, content, show_yn, writer, register_date)
