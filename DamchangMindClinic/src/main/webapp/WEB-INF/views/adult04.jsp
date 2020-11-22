@@ -16,8 +16,6 @@
 <img alt="치매2" src="resources/img/dementia2.png">
 <br>
 <img alt="치매3" src="resources/img/dementia3.png">
-<br>
-<img alt="치매4" src="resources/img/dementia4.png">
 </div>
 
 </div>

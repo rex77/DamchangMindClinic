@@ -16,8 +16,6 @@
 <img alt="asperger2" src="resources/img/asperger2.png">
 <br>
 <img alt="asperger3" src="resources/img/asperger3.png">
-<br>
-<img alt="asperger4" src="resources/img/asperger4.png">
 </div>
 
 </div>

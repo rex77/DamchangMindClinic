@@ -8,7 +8,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.dcmc.domain.Criteria;
 import com.dcmc.domain.NoticeDAO;
+import com.dcmc.domain.PageDTO;
 import com.dcmc.service.NoticeService;
 
 import lombok.extern.log4j.Log4j;
@@ -21,15 +23,14 @@ public class NoticeController {
 	NoticeService ns;
 	
 	@GetMapping("/list") 
-	public String getList(Model model) {
-		log.info("NoticeController: getList()");
-		model.addAttribute("list", ns.getList());
+	public String getList(Criteria cri, Model model) {
+		model.addAttribute("list", ns.getList(cri));
+		model.addAttribute("pageMaker",new PageDTO(cri, 123));
 		return "notice";
 	}
 	
 	@GetMapping("/view") 
 	public String viewBoard(@RequestParam("bno") int bno, Model model) {
-		log.info("NoticeController: viewBoard()");
 		model.addAttribute("board", ns.get(bno));
 		return "notice_view";
 	}
@@ -37,7 +38,6 @@ public class NoticeController {
 	@PostMapping("/register") 
 	public void register(NoticeDAO notice) {
 		System.out.println("notice: " + notice.getContent());
-		log.info("noticeController register(): ");
 		notice.setShowYn("y");
 		ns.register(notice);
 	}
@@ -47,7 +47,7 @@ public class NoticeController {
 		log.info("noticeController remove(): "+ns.remove(bno));
 	}
 	
-	@GetMapping("")
+	@PostMapping("/modify")
 	public void modify(NoticeDAO notice) {
 		log.info("noticeController modify(): "+ns.modify(notice));
 	}

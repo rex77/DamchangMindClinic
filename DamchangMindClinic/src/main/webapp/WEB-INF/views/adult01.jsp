@@ -16,8 +16,6 @@
 <img alt="불안장애2" src="resources/img/anxiety2.png">
 <br>
 <img alt="불안장애3" src="resources/img/anxiety3.png">
-<br>
-<img alt="불안장애4" src="resources/img/anxiety4.png">
 </div>
 
 </div>

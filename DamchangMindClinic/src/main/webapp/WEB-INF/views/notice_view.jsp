@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
+<%@ page language="java" contentType="text/html; charset=UTF-8" isELIgnored="false"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
@@ -11,7 +11,7 @@
 		<div id="title">
 		<div class="title01"><c:out value="${board.title}" /></div>
 		<div class="title02"><c:out value="${board.writer}" /></div>
-		<div class="title03">2020-12-13<fmt:formatDate pattern="yyyy-MM-dd" value="${board.registerDate}" /></div>
+		<div class="title03"><fmt:formatDate pattern="yyyy-MM-dd" value="${board.registerDate}" /></div>
 		</div>
 		<div id="content"><c:out value="${board.content}" /></div>
 		<a href="/notice/list"><button id="tolist" class="btn btn-primary">목록</button></a>

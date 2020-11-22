@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dcmc.mapper.BoardMapper">
+
+	<resultMap type="com.dcmc.domain.BoardDAO" id="result">
+		<result property="bno" column="bno" />
+		<result property="title" column="title" />
+		<result property="content" column="content" />
+		<result property="showYn" column="show_yn" />
+		<result property="secretYn" column="secret_yn" />
+		<result property="password" column="password" />
+		<result property="writer" column="writer" />
+		<result property="registerDate" column="register_date" javaType="java.sql.Date" />
+		<result property="replyYn" column="reply_yn" />
+	</resultMap>
+
+	<select id="getList" resultMap="result">
+		select /*+ INDEX_DESC(notice XPK질문게시판) */ *
+		from notice
+		</select>
+		
+	<select id="getListWithCri" resultMap="result">
+		<![CDATA[
+		select bno, title, content, show_yn, secret_yn, password, writer, register_date, reply_yn
+		from (
+		select /*+ INDEX_DESC(board XPK질문게시판) */ rownum rn, bno, title, content, show_yn, secret_yn, password, writer, register_date, reply_yn
+		from board where show_yn='y' AND rownum <= #{pageNum} * #{amount}
+		)
+		where rn > (#{pageNum} - 1) * #{amount} 
+		]]>
+		</select>
+
+	<insert id="insert">
+		insert into board (bno, title, content, show_yn, secret_yn, password, writer, register_date, reply_yn)
+		values (seq_board.nextval , #{title}, #{content}, #{showYn}, #{secretYn}, #{password},
+		#{writer}, SYSDATE, #{replyYn} )
+	</insert>
+
+	<select id="read" resultMap="result">
+		select * from board where bno = #{bno}
+	</select>
+
+	<update id="update">
+		update board
+		set title = #{title},
+		content = #{content},
+		writer = #{writer},
+		secret_yn = #{secretYn},
+		password = #{password}
+		where
+		bno = #{bno}
+	</update>
+
+	<update id="updateReplyYn">
+		update board
+		set reply_yn = #{replyYn}
+	</update>
+
+	<update id="delete">
+		update board
+		set show_yn='n'
+		where bno=#{bno}
+	</update>
+
+</mapper>

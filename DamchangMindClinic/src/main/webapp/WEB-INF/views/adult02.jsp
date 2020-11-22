@@ -16,8 +16,6 @@
 <img alt="공황장애2" src="resources/img/panic2.png">
 <br>
 <img alt="공황장애3" src="resources/img/panic3.png">
-<br>
-<img alt="공황장애4" src="resources/img/panic4.png">
 </div>
 
 </div>

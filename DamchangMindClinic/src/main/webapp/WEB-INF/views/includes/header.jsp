@@ -72,7 +72,7 @@
 					<ul class="depth02">
 						<li><a href="/notice/list">공지사항</a></li>
 						<li><a href="#">QnA</a></li>
-						<li><a href="#">질문게시판</a></li>
+						<li><a href="/board/list">질문게시판</a></li>
 					</ul></li>
 		</nav>
 	</div>

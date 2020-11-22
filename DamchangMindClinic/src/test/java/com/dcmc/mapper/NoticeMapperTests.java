@@ -21,7 +21,7 @@ public class NoticeMapperTests {
 	@Test
 	public void testGetListWithCri() {
 		Criteria cri = new Criteria();
-		nm.getListWithCri(cri).forEach(board->log.info("board 객체: "+board));
+		nm.getListWithCri(cri).forEach(board->log.info("board 객체: "+board.getBno()));
 	}
 	
 //	@Test

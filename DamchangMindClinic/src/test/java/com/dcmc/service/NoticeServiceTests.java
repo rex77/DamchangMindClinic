@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
+import com.dcmc.domain.Criteria;
 import com.dcmc.domain.NoticeDAO;
 
 import lombok.extern.log4j.Log4j;
@@ -19,7 +20,7 @@ public class NoticeServiceTests {
 	
 	@Test
 	public void testList() {
-		log.info(ns.getList());
+		log.info(ns.getList(new Criteria()));
 	}
 	
 	@Test

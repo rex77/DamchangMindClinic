@@ -35,3 +35,9 @@ thead>tr>th:nth-child(3) {
 thead>tr>th:nth-child(4) {
 	width: 20%;
 }
+
+.pagination-center {
+	margin : 0 auto;
+	text-align: center;
+	width: 300px;
+}

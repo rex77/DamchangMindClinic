@@ -16,8 +16,6 @@
 <img alt="불면증2" src="resources/img/insomnia2.png">
 <br>
 <img alt="불면증3" src="resources/img/insomnia3.png">
-<br>
-<img alt="불면증4" src="resources/img/insomnia4.png">
 </div>
 
 </div>

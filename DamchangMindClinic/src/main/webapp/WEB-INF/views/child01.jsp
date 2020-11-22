@@ -16,8 +16,6 @@ ADHD
 <img alt="adhd2" src="resources/img/adhd2.png">
 <br>
 <img alt="adhd3" src="resources/img/adhd3.png">
-<br>
-<img alt="adhd4" src="resources/img/adhd4.png">
 </div>
 
 </div>

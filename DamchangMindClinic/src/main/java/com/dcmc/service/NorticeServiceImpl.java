@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.dcmc.domain.Criteria;
 import com.dcmc.domain.NoticeDAO;
 import com.dcmc.mapper.NoticeMapper;
 
@@ -18,9 +19,9 @@ public class NorticeServiceImpl implements NoticeService {
 	NoticeMapper mapper;
 	
 	@Override
-	public List<NoticeDAO> getList() {
+	public List<NoticeDAO> getList(Criteria cri) {
 		// TODO Auto-generated method stub
-		return mapper.getList();
+		return mapper.getListWithCri(cri);
 	}
 
 	@Override

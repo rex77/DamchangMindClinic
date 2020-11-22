@@ -26,3 +26,20 @@
 #content-wrapper > img:first-child {
 	margin-top:0;
 }
+
+#notice {
+	text-align: center;
+	line-height: 80px;
+	height: 170px;
+	background-color: lightgrey;
+	margin-bottom: 50px;
+	font-size: 30px;
+}
+
+#section01 {
+	margin-top: 100px;
+}
+
+#section02 {
+	margin-top: 30px;
+}

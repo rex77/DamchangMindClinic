@@ -16,8 +16,6 @@
 <img alt="조현병2" src="resources/img/schizophrenia2.png">
 <br>
 <img alt="조현병3" src="resources/img/schizophrenia3.png">
-<br>
-<img alt="조현병4" src="resources/img/schizophrenia4.png">
 </div>
 
 </div>
