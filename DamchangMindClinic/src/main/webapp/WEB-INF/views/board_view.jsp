@@ -25,38 +25,40 @@
 		</div>
 	</div>
 
+	<div id="btns">
+		<c:if test="${board.replyYn == 'n'}">
+			<a><button id="modify" class="btn btn-success" data-toggle="modal"
+				data-target="#modifyModal">수정</button></a>
+		</c:if>
+		<a><button id="modify" class="btn btn-danger" data-toggle="modal"
+			data-target="#deleteModal">삭제</button></a>
+		<a href="/board/list"><button class="btn btn-primary">목록</button></a>
+	</div>
 
-	<c:if test="${board.replyYn == 'n'}">
-		<button id="modify" class="btn btn-success" data-toggle="modal"
-			data-target="#modifyModal">수정</button>
-	</c:if>
-	<button id="modify" class="btn btn-danger" data-toggle="modal"
-		data-target="#deleteModal">삭제</button>
-	<a href="/board/list"><button id="tolist" class="btn btn-primary">목록</button></a>
 </div>
 
 <!-- 수정 Modal -->
 <div class="modal fade" id="modifyModal" tabindex="-1" role="dialog"
 	aria-labelledby="modifyModalLabel" aria-hidden="true">
 
-	<form action="/board/modify" method="post">
+	<form action="/board/modify" method="get">
 		<div class="modal-dialog" role="document">
 			<div class="modal-content">
 				<div class="modal-header">
-					<h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+					<h5 class="modal-title" id="exampleModalLabel">게시글 수정</h5>
 					<button type="button" class="close" data-dismiss="modal"
 						aria-label="Close">
 						<span aria-hidden="true">&times;</span>
 					</button>
 				</div>
 				<div class="modal-body">
-					<span class="span-info">수정하려면 비밀번호를 입력하세요 </span><br>
-					<input type="text" id="password" name="password"/>
-					<input type="hidden" id="bno1" name="bno"/>
-					<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+					<span class="span-info">수정하려면 비밀번호를 입력하세요 </span><br> <input
+						type="text" class="password" name="password" /> <input type="hidden"
+						id="bno1" name="bno" /> <input type="hidden"
+						name="${_csrf.parameterName}" value="${_csrf.token}" />
 				</div>
 				<div class="modal-footer">
-					<input type="submit" value="확인" class="btn btn-success"/>
+					<input type="submit" value="확인" class="btn btn-success" />
 				</div>
 			</div>
 		</div>
@@ -72,20 +74,20 @@
 		<div class="modal-dialog" role="document">
 			<div class="modal-content">
 				<div class="modal-header">
-					<h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+					<h5 class="modal-title" id="exampleModalLabel">게시글 삭제</h5>
 					<button type="button" class="close" data-dismiss="modal"
 						aria-label="Close">
 						<span aria-hidden="true">&times;</span>
 					</button>
 				</div>
 				<div class="modal-body">
-					<span class="span-info">삭제하려면 비밀번호를 입력하세요</span><br>
-					<input type="text" id="password" name="password"/>
-					<input type="hidden" id="bno2" name="bno"/>
-					<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+					<span class="span-info">삭제하려면 비밀번호를 입력하세요</span><br> <input
+						type="text" class="password" name="password" /> <input type="hidden"
+						id="bno2" name="bno" /> <input type="hidden"
+						name="${_csrf.parameterName}" value="${_csrf.token}" />
 				</div>
 				<div class="modal-footer">
-					<input type="submit" value="확인" class="btn btn-danger"/>
+					<input type="submit" value="확인" class="btn btn-danger" />
 				</div>
 			</div>
 		</div>

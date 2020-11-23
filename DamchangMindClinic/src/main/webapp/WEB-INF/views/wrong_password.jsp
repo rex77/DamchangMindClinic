@@ -3,13 +3,17 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <%@include file="includes/header.jsp"%>
-<link href="/resources/css/notice_view.css" rel="stylesheet" type="text/css" />
+<link href="/resources/css/password_view.css" rel="stylesheet"
+	type="text/css" />
 
 <div id="wrapper">
-	<div id="subtitle">공지사항</div>
+	<div id="subtitle">질문게시판</div>
 	<div id="content-wrapper">
-		<h2>비밀번호가 틀렸습니다</h2>
-		<a href="javascript:history.back()"><button class="btn btn-primary">돌아가기</button></a>
+		<div id="title">비밀글로 설정된 게시글입니다</div>
+		<div id="content">
+			<h2>잘못된 비밀번호입니다!</h2>
+			<a href="/board/list"><button class="btn btn-primary">뒤로가기</button></a>
+		</div>
 	</div>
 </div>
 

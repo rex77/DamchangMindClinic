@@ -26,7 +26,7 @@ public class BoardController {
 	@GetMapping("/list")
 	public String getList(Criteria cri, Model model) {
 		model.addAttribute("list", bs.getList(cri));
-		model.addAttribute("pageMaker",new PageDTO(cri, 123));
+		model.addAttribute("pageMaker", new PageDTO(cri, 123));
 		return "board";
 	}
 
@@ -35,6 +35,7 @@ public class BoardController {
 		// secret board
 		BoardDAO board = bs.get(bno);
 		if (board.getSecretYn().equals("y")) {
+			model.addAttribute("bno", bno);
 			return "password_view";
 		} else {
 			model.addAttribute("board", bs.get(bno));
@@ -44,36 +45,62 @@ public class BoardController {
 
 	@PostMapping("/view")
 	public String passwordCheck(@RequestParam("password") String password, @RequestParam("bno") int bno, Model model) {
-	
+
 		BoardDAO board = bs.get(bno);
+		if (password == null)
+			password = "";
+
 		if (board.getPassword().equals(password)) {
 			model.addAttribute("board", bs.get(bno));
 			return "board_view";
-		}
-		else
-		{
+		} else {
 			return "wrong_password";
 		}
-		
+
 	}
-	
+
+	@GetMapping("/register")
+	public String registerView() {
+		return "board_register";
+
+	}
+
 	@PostMapping("/register")
-	public void register(BoardDAO board) {
-		System.out.println("board: " + board.getContent());
-		log.info("boardController register(): ");
+	public String register(BoardDAO board) {
+		System.out.println("secretYn : " + board.getSecretYn());
+		if (board.getSecretYn() == null)
+			board.setSecretYn("n");
 		board.setShowYn("y");
+		board.setReplyYn("n");
 		bs.register(board);
+		return "redirect:/board/list";
 	}
 
 	@PostMapping("/remove")
 	public String remove(@RequestParam("bno") int bno, @RequestParam("password") String password) {
-		log.info("boardController remove(): " + bs.remove(bno, password));
-		return "redirect:/board/list";
+		BoardDAO original = bs.get(bno);
+
+		if (original.getPassword().equals(password)) {
+			bs.remove(bno);
+			return "redirect:/board/list";
+		} else {
+			return "wrong_password";
+		}
+	}
+
+	@GetMapping("/modify")
+	public String modifyView(@RequestParam("bno") int bno, @RequestParam("password") String password, Model model) {
+		BoardDAO original = bs.get(bno);
+		if (original.getPassword().equals(password)) {
+			model.addAttribute("board", original);
+			return "board_register";
+		} else {
+			return "wrong_password";
+		}
 	}
 
 	@PostMapping("/modify")
 	public String modify(BoardDAO board) {
-		log.info("boardController modify(): " + bs.modify(board));
 		return "redirect:/board/list";
 	}
 }

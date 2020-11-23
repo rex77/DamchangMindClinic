@@ -1,0 +1,171 @@
+@charset "UTF-8";
+
+#wrapper {
+	width: 100%;
+	margin-top: 100px;
+	font-family: 'Noto Sans KR', sans-serif;
+}
+
+#subtitle {
+	color: rgb(44, 62, 80);
+	text-align: center;
+	padding: 75px 0;
+	font-size: 30px;
+	background-image: url('/resources/img/board-background.jpg');
+	background-position: center;
+}
+
+#content-wrapper {
+	width: 1200px;
+	margin: 0 auto;
+	text-align:right;
+}
+
+#title, #content {
+	text-align: center;
+}
+
+#title {
+	margin-top: 20px;
+	 padding : 15px 0;
+	background-color: #dddddd;
+	padding: 15px 0;
+}
+
+#title > div {
+	display: inline-block;
+}
+
+.title01 {
+	width:75%;
+	font-size: 20px;
+}
+
+.title02 {
+	width:10%;
+	font-size: 15px;
+}
+
+.title03 {
+	width: 10%;
+	font-size: 15px;
+}
+
+#content {
+	padding : 30px 0;
+	margin-bottom: 10px;
+}
+
+#tolist {
+	margin-bottom: 20px;
+}
+
+.span-info {
+	font-size: 20px;
+	margin-bottom: 15px;
+}
+
+#btns {
+	width : 1200px;
+	margin: 20px auto;
+	text-align : right;
+}
+
+.password {
+	width : 100%;
+}
+
+.container{
+  margin-bottom: 3%
+}
+
+.write-title{
+  font-size:2.4rem;
+  font-weight:900;
+  padding:1%;
+}
+
+.write-title a, .write-title a:hover{
+  color:#16a085;
+  text-decoration: none;
+}
+
+.write-form ul{
+  list-style: none;
+  line-height: 10px;
+  width:100%;
+  margin:0;
+  padding:0;
+  border-spacing:0;
+  margin-bottom: 0;
+  border-collapse:collapse;
+}
+
+.write-list li{
+  border:1px solid rgb(235, 235, 235);
+}
+
+.check-notice, .check-secret{
+  margin: -1% 1% 0 2%;
+  color:black;
+  font-size:0.8rem;
+}
+
+.nick{
+  width:50%;
+}
+
+.subject{
+  width:100%;
+}
+
+input[type="text"], input[type="password"]{
+  padding:10px;
+  height:38px;
+  font-size:1.0rem !important;
+  line-height: 18px;
+  resize:none;
+  outline:none;
+  border:none;
+}
+
+.content .write-memo{
+  padding:10px;
+  width:100%;
+  height:370px;
+  line-height:20px;
+  padding-bottom:340px;
+  font-size:15px !important;
+  resize:none;
+  outline:none;
+  border:none;
+}
+
+
+.okbtn{
+  line-height: 30px;
+  font-size:15px;
+  margin: 5px 0 0 0;
+}
+
+
+.write-btn, .write-btn:hover{
+  color:black;
+}
+
+button:focus{
+  outline:none;
+}
+
+.write-ok-btn{
+  padding:8px 0;
+  width:100%;
+  font-weight: bold;
+  border:1px solid rgb(235, 235, 235);
+  color:white;
+  background-color:#189d79;
+}
+
+.write-nick{
+	text-align:left;
+}

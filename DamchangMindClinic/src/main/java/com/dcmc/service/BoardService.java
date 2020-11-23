@@ -22,6 +22,6 @@ public interface BoardService {
 		public boolean modify(BoardDAO board);
 		
 		// 글 삭제
-		public boolean remove(int bno, String password);
+		public boolean remove(int bno);
 		
 }

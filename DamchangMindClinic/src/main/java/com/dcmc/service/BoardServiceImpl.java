@@ -57,13 +57,9 @@ public class BoardServiceImpl implements BoardService {
 	}
 
 	@Override
-	public boolean remove(int bno, String password) {
+	public boolean remove(int bno) {
 		// TODO Auto-generated method stub
-		BoardDAO board = mapper.read(bno);
-		if(password.equals(board.getPassword()))
-			return mapper.delete(bno);
-		else
-			return false;
+		return mapper.delete(bno);
 	}
 
 }

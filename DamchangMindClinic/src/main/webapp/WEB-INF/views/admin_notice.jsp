@@ -2,11 +2,11 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
-<%@include file="includes/header.jsp"%>
-<link href="/resources/css/board.css" rel="stylesheet" type="text/css" />
+<%@include file="includes/admin_header.jsp"%>
+<link href="/resources/css/notice.css" rel="stylesheet" type="text/css" />
 
 <div id="wrapper">
-	<div id="subtitle">질문게시판</div>
+	<div id="subtitle">공지사항 관리자페이지</div>
 	<table class="table">
 		<thead>
 			<tr>
@@ -20,7 +20,7 @@
 			<c:forEach items="${list}" var="board">
 				<tr>
 					<th><c:out value="${board.bno}" /></th>
-					<td><a href="<c:out value='/board/view?bno=${board.bno}' />"><c:out
+					<td><a href="<c:out value='/notice/view?bno=${board.bno}' />"><c:out
 								value="${board.title}" /></a></td>
 					<td><c:out value="${board.writer}" /></td>
 					<td><fmt:formatDate pattern="yyyy-MM-dd"
@@ -29,7 +29,7 @@
 			</c:forEach>
 		</tbody>
 	</table>
-	<div id="btns"><a href="/board/register"><button class="btn btn-primary">작성</button></a></div>
+
 	<div class="pagination-center">
 		<ul class="pagination">
 			<c:if test="${pageMaker.prev }">
