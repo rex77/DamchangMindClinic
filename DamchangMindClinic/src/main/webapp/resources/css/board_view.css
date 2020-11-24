@@ -15,11 +15,11 @@
 	background-position: center;
 }
 
-#content-wrapper {
+#content-wrapper, #reply-wrapper {
 	width: 1200px;
-	margin: 0 auto;
-	text-align:right;
+	margin: 50px auto;
 }
+
 
 #title, #content {
 	text-align: center;

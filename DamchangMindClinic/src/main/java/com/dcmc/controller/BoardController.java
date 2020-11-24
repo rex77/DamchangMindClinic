@@ -72,6 +72,7 @@ public class BoardController {
 			board.setSecretYn("n");
 		board.setShowYn("y");
 		board.setReplyYn("n");
+		System.out.println(board);
 		bs.register(board);
 		return "redirect:/board/list";
 	}
@@ -89,9 +90,10 @@ public class BoardController {
 	}
 
 	@GetMapping("/modify")
-	public String modifyView(@RequestParam("bno") int bno, @RequestParam("password") String password, Model model) {
+	public String modifyView(@RequestParam("origBno") int bno, @RequestParam("password") String password, Model model) {
 		BoardDAO original = bs.get(bno);
 		if (original.getPassword().equals(password)) {
+			System.out.println(original.getSecretYn());
 			model.addAttribute("board", original);
 			return "board_register";
 		} else {
@@ -100,7 +102,12 @@ public class BoardController {
 	}
 
 	@PostMapping("/modify")
-	public String modify(BoardDAO board) {
+	public String modify(@RequestParam("origBno") int bno, BoardDAO board) {
+		board.setBno(bno);
+		if(board.getSecretYn()==null)
+			board.setSecretYn("n");
+		bs.modify(board);
+		//alert page 추가하기
 		return "redirect:/board/list";
 	}
 }

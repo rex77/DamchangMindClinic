@@ -17,13 +17,15 @@
 				<div class="write-box">
 					<div class="write-form">
 						<form id="form1" action="/board/register" method="post">
+						<input type="hidden"
+						name="${_csrf.parameterName}" value="${_csrf.token}" />
 							<ul class="write-list">
 								<li class="write-nickname">
 									<div class="write-nick">
 										<input type="text" class="nick" name="writer"
 											placeholder="닉네임" value="<c:out value='${board.writer}'/>"> <label for="" class="check-secret">비밀글</label>
 										<input type="checkbox" class="write-secret" id="secret"
-											name="secretYn" value="y">
+											name="secretYn" value="y" <c:if test="${board.secretYn == 'y'}">checked</c:if> />
 									</div>
 								</li>
 								<li>
@@ -34,7 +36,7 @@
 								</li>
 								<li>
 									<div class="content">
-										<textarea name="content" placeholder="내용" class="write-memo" value="<c:out value='${board.content}'/>"></textarea>
+										<textarea name="content" placeholder="내용" class="write-memo"><c:out value='${board.content}'/></textarea>
 									</div>
 								</li>
 								<li>
@@ -51,8 +53,7 @@
 											type="submit" value="확인" id="ok" class="write-ok-btn"></a>
 									</div>
 								</div>
-								<input type="hidden" name="${_csrf.parameterName}"
-									value="${_csrf.token}" />
+						<input type="hidden" name="origBno" value="<c:out value='${board.bno}'/>"/>
 						</form>
 					</div>
 
@@ -62,17 +63,19 @@
 	</div>
 </div>
 <script>
-	
+let bno = <c:out value="${board.bno}"/>;
+if(bno != "")
+	$("#form1").attr("action", "/board/modify");
+$("#form1").attr("method", "post");
+
 	$("#ok").on("click",function() {
-			if($('#form1 [name="password"]').val() == "") {
+		if($('#form1 [name="password"]').val() == "") {
 			alert("비밀번호는 필수입력사항입니다.");
 			return false;
-		}
-		else {
+		}else {
 			$('#form1').submit();
 		}
 	});
-	
 
 </script>
 <%@include file="includes/footer.jsp"%>

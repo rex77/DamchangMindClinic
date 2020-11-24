@@ -17,4 +17,10 @@ public class BoardDAO {
 	private String password;
 	private Date registerDate;
 	private String replyYn;
+	@Override
+	public String toString() {
+		return "BoardDAO [bno=" + bno + ", title=" + title + ", content=" + content + ", writer=" + writer + ", showYn="
+				+ showYn + ", secretYn=" + secretYn + ", password=" + password + ", registerDate=" + registerDate
+				+ ", replyYn=" + replyYn + "]";
+	}
 }

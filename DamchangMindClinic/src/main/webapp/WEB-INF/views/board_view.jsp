@@ -9,6 +9,7 @@
 <div id="wrapper">
 	<div id="subtitle">질문게시판</div>
 	<div id="content-wrapper">
+	<h2>질문</h2>
 		<div id="title">
 			<div class="title01">
 				<c:out value="${board.title}" />
@@ -24,15 +25,33 @@
 			<c:out value="${board.content}" />
 		</div>
 	</div>
+	<div id="reply-wrapper">
+	<h2>답변</h2>
+		<div id="title">
+			<div class="title01">
+				<c:out value="${reply.title}" />
+			</div>
+			<div class="title02">
+				<c:out value="${reply.writer}" />
+			</div>
+			<div class="title03">
+				<fmt:formatDate pattern="yyyy-MM-dd" value="${reply.registerDate}" />
+			</div>
+		</div>
 
+		<div id="content">
+			<c:out value="${reply.content}" />
+		</div>
+
+	</div>
 	<div id="btns">
 		<c:if test="${board.replyYn == 'n'}">
-			<a><button id="modify" class="btn btn-success" data-toggle="modal"
-				data-target="#modifyModal">수정</button></a>
+			<a><button id="modify" class="btn btn-success"
+					data-toggle="modal" data-target="#modifyModal">수정</button></a>
 		</c:if>
 		<a><button id="modify" class="btn btn-danger" data-toggle="modal"
-			data-target="#deleteModal">삭제</button></a>
-		<a href="/board/list"><button class="btn btn-primary">목록</button></a>
+				data-target="#deleteModal">삭제</button></a> <a href="/board/list"><button
+				class="btn btn-primary">목록</button></a>
 	</div>
 
 </div>
@@ -53,8 +72,8 @@
 				</div>
 				<div class="modal-body">
 					<span class="span-info">수정하려면 비밀번호를 입력하세요 </span><br> <input
-						type="text" class="password" name="password" /> <input type="hidden"
-						id="bno1" name="bno" /> <input type="hidden"
+						type="password" class="password" name="password" /> <input
+						type="hidden" id="bno1" name="origBno" /> <input type="hidden"
 						name="${_csrf.parameterName}" value="${_csrf.token}" />
 				</div>
 				<div class="modal-footer">
@@ -82,8 +101,8 @@
 				</div>
 				<div class="modal-body">
 					<span class="span-info">삭제하려면 비밀번호를 입력하세요</span><br> <input
-						type="text" class="password" name="password" /> <input type="hidden"
-						id="bno2" name="bno" /> <input type="hidden"
+						type="password" class="password" name="password" /> <input
+						type="hidden" id="bno2" name="bno" /> <input type="hidden"
 						name="${_csrf.parameterName}" value="${_csrf.token}" />
 				</div>
 				<div class="modal-footer">

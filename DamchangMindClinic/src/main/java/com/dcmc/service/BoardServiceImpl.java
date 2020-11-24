@@ -49,11 +49,8 @@ public class BoardServiceImpl implements BoardService {
 	@Override
 	public boolean modify(BoardDAO board) {
 		// TODO Auto-generated method stub
-		BoardDAO original = mapper.read(board.getBno());
-		if(original.getPassword().equals(board.getPassword()))
-			return mapper.update(board);
-		else
-			return false;
+		System.out.println("content: "+board.getContent());
+		return mapper.update(board);
 	}
 
 	@Override
