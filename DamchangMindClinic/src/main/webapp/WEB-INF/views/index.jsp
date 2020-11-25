@@ -23,11 +23,11 @@
 		<ul class="banner4-wrapper">
 			<li class="banner4"><a href="/team"><img
 					src="resources/img/section02_banner1.png" /></a></li>
-			<li class="banner4"><a href="#"><img
+			<li class="banner4"><a href="/anxiety"><img
 					src="resources/img/section02_banner2.png" /></a></li>
-			<li class="banner4"><a href="#"><img
+			<li class="banner4"><a href="adhd"><img
 					src="resources/img/section02_banner3.png" /></a></li>
-			<li class="banner4"><a href="#"><img
+			<li class="banner4"><a href="/board/list"><img
 					src="resources/img/section02_banner4.png" /></a></li>
 		</ul>
 	</div>

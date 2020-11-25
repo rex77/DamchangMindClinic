@@ -4,6 +4,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <%@include file="includes/header.jsp"%>
 <link href="/resources/css/board.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
 <div id="wrapper">
 	<div id="subtitle">질문게시판</div>
@@ -21,7 +22,10 @@
 				<tr>
 					<th><c:out value="${board.bno}" /></th>
 					<td><a href="<c:out value='/board/view?bno=${board.bno}' />"><c:out
-								value="${board.title}" /></a></td>
+								value="${board.title}" />
+								<c:if test="${board.replyYn == 'y'}">&nbsp<i class="fas fa-comment"/></c:if>
+								<c:if test="${board.secretYn == 'y'}">&nbsp<i class="fa fa-lock"/></c:if>
+								</a></td>
 					<td><c:out value="${board.writer}" /></td>
 					<td><fmt:formatDate pattern="yyyy-MM-dd"
 							value="${board.registerDate}" /></td>
@@ -51,7 +55,7 @@
 
 	<!--  가짜 폼 -->
 
-	<form id="actionForm" action="/notice/list" method="get">
+	<form id="actionForm" action="/board/list" method="get">
 		<input type="hidden" name="pageNum" value="${pageMaker.cri.pageNum }" />
 		<input type="hidden" name="amount" value="${pageMaker.cri.amount }" />
 	</form>

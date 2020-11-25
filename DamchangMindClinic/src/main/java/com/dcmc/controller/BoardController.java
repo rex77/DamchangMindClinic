@@ -62,7 +62,6 @@ public class BoardController {
 	@GetMapping("/register")
 	public String registerView() {
 		return "board_register";
-
 	}
 
 	@PostMapping("/register")

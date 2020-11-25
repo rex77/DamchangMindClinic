@@ -98,5 +98,8 @@ public class HomeController {
 		return "child02";
 	}
 	
-	
+	@RequestMapping(value = "/login2", method = RequestMethod.GET)
+	public String login(Model model) {
+		return "login";
+	}
 }
