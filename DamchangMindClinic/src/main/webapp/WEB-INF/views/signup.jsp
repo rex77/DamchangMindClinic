@@ -13,9 +13,9 @@
 					<div class="card card-signin my-5 mt-5">
 						<div class="card-body">
 							<h5 class="card-title text-center">Sign In</h5>
-							<form class="form-signin" action="/login" method="post">
+							<form class="form-signin" action="/signup" method="post">
 								<div class="form-label-group">
-									<input type="text" name="username" id="inputUsername"
+									<input type="text" name="id" id="inputUsername"
 										class="form-control" placeholder="Email address" required
 										autofocus> <label for="inputUsername">Id</label>
 								</div>
@@ -25,18 +25,11 @@
 										class="form-control" placeholder="Password" required>
 									<label for="inputPassword">Password</label>
 								</div>
-
-								<div class="custom-control custom-checkbox mb-3">
-									<input type="checkbox" name="autoLogin" class="custom-control-input"
-										id="customCheck1"> <label class="custom-control-label"
-										for="customCheck1">자동 로그인</label>
-								</div>
-								<div class="error">
-								<c:out value="${error}"/>
-								<c:out value="${logout }"/>
-								</div>
-								<div class="signup">
-								<a href="/signup">회원가입 페이지로</a>
+								
+								<div class="form-label-group">
+									<input type="text" name="username" id="inputUsername"
+										class="form-control" placeholder="username" required>
+									<label for="inputPassword">Username</label>
 								</div>
 								<input class="btn btn-lg btn-danger btn-block text-uppercase"
 									type="submit" value="sign in">

@@ -48,8 +48,12 @@
 			<ul class="navbar-nav depth01">
 				<li><a class="logo" href=""><img
 						src="/resources/img/logo_white.png" alt="로고"></a></li>
-				<li class="nav-item"><a href="" disabled>관리자용페이지</a>
+				<li class="nav-item"><a href="#" onclick="document.getElementById('logout-form').submit();">로그아웃</a>
 					</li>
+					<form id="logout-form" action="/logout" method="POST">
+   <input name="${_csrf.parameterName}" type="hidden" value="${_csrf.token}"/>
+</form>
+					
 				<li class="nav-item"><a href="/admin/notice">공지사항</a>
 					</li>
 				<li class="nav-item"><a href="/admin/board">질문게시판</a>
