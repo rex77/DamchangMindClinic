@@ -54,6 +54,7 @@
 	<update id="updateReplyYn">
 		update board
 		set reply_yn = #{replyYn}
+		where bno = #{bno}
 	</update>
 
 	<update id="delete">

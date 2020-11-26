@@ -49,14 +49,20 @@ public class BoardServiceImpl implements BoardService {
 	@Override
 	public boolean modify(BoardDAO board) {
 		// TODO Auto-generated method stub
-		System.out.println("content: "+board.getContent());
 		return mapper.update(board);
 	}
 
+	
 	@Override
 	public boolean remove(int bno) {
 		// TODO Auto-generated method stub
 		return mapper.delete(bno);
+	}
+
+	@Override
+	public boolean updateReply(int bno, String replyYn) {
+		// TODO Auto-generated method stub
+		return mapper.updateReplyYn(bno, replyYn);
 	}
 
 }

@@ -29,7 +29,7 @@
 	<h2>답변</h2>
 		<div id="title">
 			<div class="title01">
-				<c:out value="${reply.title}" />
+					<c:if test="${board.replyYn == 'y'}"> 답변입니다.	</c:if>
 			</div>
 			<div class="title02">
 				<c:out value="${reply.writer}" />
@@ -40,6 +40,7 @@
 		</div>
 
 		<div id="content">
+			<c:if test="${board.replyYn == 'n'}"> 아직 답변이 없습니다.	</c:if>
 			<c:out value="${reply.content}" />
 		</div>
 

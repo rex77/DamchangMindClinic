@@ -17,4 +17,6 @@ public interface BoardMapper {
 	public boolean delete(int bno);
 	
 	public boolean update(BoardDAO notice);
+	
+	public boolean updateReplyYn(int bno, String replyYn);
 }

@@ -20,7 +20,7 @@
 			<c:forEach items="${list}" var="board">
 				<tr>
 					<th><c:out value="${board.bno}" /></th>
-					<td><a href="<c:out value='/notice/view?bno=${board.bno}' />"><c:out
+					<td><a href="<c:out value='/admin/notice/view?bno=${board.bno}' />"><c:out
 								value="${board.title}" /></a></td>
 					<td><c:out value="${board.writer}" /></td>
 					<td><fmt:formatDate pattern="yyyy-MM-dd"
@@ -51,7 +51,7 @@
 
 	<!--  가짜 폼 -->
 
-	<form id="actionForm" action="/notice/list" method="get">
+	<form id="actionForm" action="/admin/notice/list" method="get">
 		<input type="hidden" name="pageNum" value="${pageMaker.cri.pageNum }" />
 		<input type="hidden" name="amount" value="${pageMaker.cri.amount }" />
 	</form>

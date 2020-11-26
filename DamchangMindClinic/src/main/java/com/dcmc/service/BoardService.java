@@ -21,6 +21,9 @@ public interface BoardService {
 		// 글 수정
 		public boolean modify(BoardDAO board);
 		
+		//답글여부 업데이트
+		public boolean updateReply(int bno, String replyYn);
+		
 		// 글 삭제
 		public boolean remove(int bno);
 		

@@ -54,9 +54,9 @@
    <input name="${_csrf.parameterName}" type="hidden" value="${_csrf.token}"/>
 </form>
 					
-				<li class="nav-item"><a href="/admin/notice">공지사항</a>
+				<li class="nav-item"><a href="/admin/notice/list">공지사항</a>
 					</li>
-				<li class="nav-item"><a href="/admin/board">질문게시판</a>
+				<li class="nav-item"><a href="/admin/board/list">질문게시판</a>
 					</li>
 		</nav>
 	</div>

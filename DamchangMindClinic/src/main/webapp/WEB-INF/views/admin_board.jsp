@@ -21,7 +21,7 @@
 			<c:forEach items="${list}" var="board">
 				<tr>
 					<th><c:out value="${board.bno}" /></th>
-					<td><a href="<c:out value='/board/view?bno=${board.bno}' />"><c:out
+					<td><a href="<c:out value='/admin/board/view?bno=${board.bno}' />"><c:out
 								value="${board.title}" />
 								<c:if test="${board.replyYn == 'y'}">&nbsp<i class="fas fa-comment"/></c:if>
 								<c:if test="${board.secretYn == 'y'}">&nbsp<i class="fa fa-lock"/></c:if>
@@ -33,7 +33,6 @@
 			</c:forEach>
 		</tbody>
 	</table>
-	<div id="btns"><a href="/board/register"><button class="btn btn-primary">작성</button></a></div>
 	<div class="pagination-center">
 		<ul class="pagination">
 			<c:if test="${pageMaker.prev }">
@@ -55,7 +54,7 @@
 
 	<!--  가짜 폼 -->
 
-	<form id="actionForm" action="/board/list" method="get">
+	<form id="actionForm" action="/admin/board/list" method="get">
 		<input type="hidden" name="pageNum" value="${pageMaker.cri.pageNum }" />
 		<input type="hidden" name="amount" value="${pageMaker.cri.amount }" />
 	</form>

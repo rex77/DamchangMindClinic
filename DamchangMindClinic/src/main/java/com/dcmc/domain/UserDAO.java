@@ -49,4 +49,8 @@ public class UserDAO implements UserDetails {
 		// TODO Auto-generated method stub
 		return true;
 	}
+	
+	public String getNickname() {
+		return username;
+	}
 }
