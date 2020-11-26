@@ -30,6 +30,7 @@
 		</tbody>
 	</table>
 
+	<div id="btns"><a href="/admin/notice/register"><button class="btn btn-primary">작성</button></a></div>
 	<div class="pagination-center">
 		<ul class="pagination">
 			<c:if test="${pageMaker.prev }">

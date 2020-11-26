@@ -25,7 +25,8 @@ public class NoticeController {
 	@GetMapping("/list") 
 	public String getList(Criteria cri, Model model) {
 		model.addAttribute("list", ns.getList(cri));
-		model.addAttribute("pageMaker",new PageDTO(cri, 123));
+		System.out.println("개수 : " + ns.getTotalCount());
+		model.addAttribute("pageMaker",new PageDTO(cri, ns.getTotalCount()));
 		return "notice";
 	}
 	
@@ -33,22 +34,5 @@ public class NoticeController {
 	public String viewBoard(@RequestParam("bno") int bno, Model model) {
 		model.addAttribute("board", ns.get(bno));
 		return "notice_view";
-	}
-	
-	@PostMapping("/register") 
-	public void register(NoticeDAO notice) {
-		System.out.println("notice: " + notice.getContent());
-		notice.setShowYn("y");
-		ns.register(notice);
-	}
-	
-	@GetMapping("/remove") 
-	public void remove(int bno) {
-		log.info("noticeController remove(): "+ns.remove(bno));
-	}
-	
-	@PostMapping("/modify")
-	public void modify(NoticeDAO notice) {
-		log.info("noticeController modify(): "+ns.modify(notice));
 	}
 }

@@ -65,4 +65,10 @@ public class BoardServiceImpl implements BoardService {
 		return mapper.updateReplyYn(bno, replyYn);
 	}
 
+	@Override
+	public int getTotalCount() {
+		// TODO Auto-generated method stub
+		return mapper.getTotalCount();
+	}
+
 }

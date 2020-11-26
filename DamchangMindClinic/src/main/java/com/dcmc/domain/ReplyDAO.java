@@ -14,5 +14,5 @@ public class ReplyDAO {
 	private int bno;
 	private String content;
 	private String writer;
-	private Date register_date;
+	private Date registerDate;
 }

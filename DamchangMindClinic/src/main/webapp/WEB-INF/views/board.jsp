@@ -23,7 +23,7 @@
 					<th><c:out value="${board.bno}" /></th>
 					<td><a href="<c:out value='/board/view?bno=${board.bno}' />"><c:out
 								value="${board.title}" />
-								<c:if test="${board.replyYn == 'y'}">&nbsp<i class="fas fa-comment"/></c:if>
+								<c:if test="${board.replyYn == 'y'}">&nbsp<i class="fa fa-comment"/></c:if>
 								<c:if test="${board.secretYn == 'y'}">&nbsp<i class="fa fa-lock"/></c:if>
 								</a></td>
 					<td><c:out value="${board.writer}" /></td>

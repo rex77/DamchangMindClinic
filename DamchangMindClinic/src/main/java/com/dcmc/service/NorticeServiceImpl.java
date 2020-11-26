@@ -47,4 +47,10 @@ public class NorticeServiceImpl implements NoticeService {
 		return mapper.delete(bno);
 	}
 
+	@Override
+	public int getTotalCount() {
+		// TODO Auto-generated method stub
+		return mapper.getTotalCount();
+	}
+
 }

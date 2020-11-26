@@ -7,7 +7,7 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
 <div id="wrapper">
-	<div id="subtitle">관리자용 질문게시판</div>
+	<div id="subtitle">질문게시판 관리자페이지</div>
 	<table class="table">
 		<thead>
 			<tr>
@@ -23,7 +23,7 @@
 					<th><c:out value="${board.bno}" /></th>
 					<td><a href="<c:out value='/admin/board/view?bno=${board.bno}' />"><c:out
 								value="${board.title}" />
-								<c:if test="${board.replyYn == 'y'}">&nbsp<i class="fas fa-comment"/></c:if>
+								<c:if test="${board.replyYn == 'y'}">&nbsp<i class="fa fa-comment"/></c:if>
 								<c:if test="${board.secretYn == 'y'}">&nbsp<i class="fa fa-lock"/></c:if>
 								</a></td>
 					<td><c:out value="${board.writer}" /></td>

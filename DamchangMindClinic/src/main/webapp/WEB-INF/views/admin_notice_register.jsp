@@ -29,14 +29,14 @@ if (principal != null && principal instanceof UserDAO) {
 %>
 
 <div id="wrapper">
-	<div id="subtitle">질문게시판 관리자페이지</div>
+	<div id="subtitle">공지사항 관리자페이지</div>
 	<div id="content-wrapper">
 		<div id="content">
 			<!-- 게시글 리스트 -->
 			<div class="container">
 				<div class="write-box">
 					<div class="write-form">
-						<form id="form1" action="/admin/reply/register" method="post">
+						<form id="form1" action="/admin/notice/register" method="post">
 							<input type="hidden" name="${_csrf.parameterName}"
 								value="${_csrf.token}" />
 							<ul class="write-list">
@@ -47,8 +47,15 @@ if (principal != null && principal instanceof UserDAO) {
 									</div>
 								</li>
 								<li>
+									<div class="write-subject">
+										<input type="text" class="subject" name="title"
+											placeholder="제목" value="<c:out value='${board.title}'/>">
+									</div>
+								</li>
+								<li>
 									<div class="content">
-										<textarea name="content" placeholder="내용" class="write-memo"><c:choose><c:when test="${board.replyYn == 'n' }">원문 : <c:out value='${board.content}' /></c:when><c:otherwise><c:out value='${reply.content}' /></c:otherwise></c:choose></textarea>
+										<textarea name="content" placeholder="내용" class="write-memo"><c:out
+												value='${board.content}' /></textarea>
 									</div>
 								</li>
 							</ul>
@@ -60,21 +67,21 @@ if (principal != null && principal instanceof UserDAO) {
 									</div>
 								</div>
 								<input type="hidden" name="bno"
+									value="<c:if test='${board.bno == null }'>0</c:if><c:out value='${board.bno}'/>" /> 
+								<input type="hidden" name="origBno"
 									value="<c:out value='${board.bno}'/>" /> 
-									<input type="hidden"
-									name="rno" value="<c:if test='${reply.rno == null}'>0</c:if><c:out value='${reply.rno}'/>" />
+							</div>
 						</form>
 					</div>
-
 				</div>
 			</div>
 		</div>
 	</div>
 </div>
 <script>
-		let rno = <c:out value="${reply.rno}"/>;
-		if (rno != "")
-			$("#form1").attr("action", "/admin/reply/modify");
-		$("#form1").attr("method", "post");
+			let bno = <c:out value="${board.bno}"/>;
+			if (bno != "")
+				$("#form1").attr("action", "/admin/notice/modify");
+			$("#form1").attr("method", "post");
 </script>
 <%@include file="includes/footer.jsp"%>

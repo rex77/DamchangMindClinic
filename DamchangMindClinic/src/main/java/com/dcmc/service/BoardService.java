@@ -27,4 +27,7 @@ public interface BoardService {
 		// 글 삭제
 		public boolean remove(int bno);
 		
+		// 전체 글 갯수
+		public int getTotalCount();
+		
 }

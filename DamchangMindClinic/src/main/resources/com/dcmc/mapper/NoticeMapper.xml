@@ -41,7 +41,7 @@
 		update notice
 		set title = #{title},
 		content = #{content},
-		writer = #{writer},
+		writer = #{writer}
 		where
 		bno = #{bno}
 	</update>
@@ -51,5 +51,9 @@
 		set show_yn='n'
 		where bno=#{bno}
 	</delete>
+	
+	<select id="getTotalCount" resultType="int">
+		select count(*) from notice
+	</select>
 
 </mapper>

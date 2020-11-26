@@ -17,4 +17,6 @@ public interface NoticeMapper {
 	public boolean delete(int bno);
 	
 	public boolean update(NoticeDAO notice);
+	
+	public int getTotalCount();
 }

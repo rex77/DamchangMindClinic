@@ -27,6 +27,7 @@ public class ReplyServiceImpl implements ReplyService {
 	@Override
 	public void register(ReplyDAO reply) {
 		// TODO Auto-generated method stub
+		reply.getWriter();
 		rm.insert(reply);
 		bm.updateReplyYn(reply.getBno(), "y");
 	}

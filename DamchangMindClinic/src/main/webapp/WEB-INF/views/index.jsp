@@ -47,5 +47,7 @@
 		autoplayTimeout : 3000,
 		autoplayHoverPause : true
 	});
+
+	
 </script>
 <%@include file="includes/footer.jsp"%>

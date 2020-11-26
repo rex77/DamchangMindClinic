@@ -58,3 +58,7 @@ body {
 	font-size: 15px;
 	padding: 10px 0;
 }
+
+#ch-plugin {
+	height: 0% !important;
+}

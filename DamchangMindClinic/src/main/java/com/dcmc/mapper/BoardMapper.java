@@ -2,6 +2,8 @@ package com.dcmc.mapper;
 
 import java.util.List;
 
+import org.apache.ibatis.annotations.Param;
+
 import com.dcmc.domain.BoardDAO;
 import com.dcmc.domain.Criteria;
 
@@ -18,5 +20,7 @@ public interface BoardMapper {
 	
 	public boolean update(BoardDAO notice);
 	
-	public boolean updateReplyYn(int bno, String replyYn);
+	public boolean updateReplyYn(@Param("bno")int bno , @Param("replyYn") String replyYn);
+	
+	public int getTotalCount();
 }

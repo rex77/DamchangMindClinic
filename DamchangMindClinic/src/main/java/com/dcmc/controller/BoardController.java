@@ -12,6 +12,7 @@ import com.dcmc.domain.BoardDAO;
 import com.dcmc.domain.Criteria;
 import com.dcmc.domain.PageDTO;
 import com.dcmc.service.BoardService;
+import com.dcmc.service.ReplyService;
 
 import lombok.extern.log4j.Log4j;
 
@@ -22,11 +23,15 @@ public class BoardController {
 
 	@Autowired
 	BoardService bs;
+	
+	@Autowired
+	ReplyService rs;
 
 	@GetMapping("/list")
 	public String getList(Criteria cri, Model model) {
 		model.addAttribute("list", bs.getList(cri));
-		model.addAttribute("pageMaker", new PageDTO(cri, 123));
+		model.addAttribute("pageMaker", new PageDTO(cri, bs.getTotalCount()));
+		System.out.println("개수 : " + bs.getTotalCount());
 		return "board";
 	}
 
@@ -38,7 +43,9 @@ public class BoardController {
 			model.addAttribute("bno", bno);
 			return "password_view";
 		} else {
-			model.addAttribute("board", bs.get(bno));
+			model.addAttribute("board", board);
+			if(board.getReplyYn().equals("y"))
+				model.addAttribute("reply", rs.get(bno));
 			return "board_view";
 		}
 	}
@@ -51,7 +58,9 @@ public class BoardController {
 			password = "";
 
 		if (board.getPassword().equals(password)) {
-			model.addAttribute("board", bs.get(bno));
+			model.addAttribute("board", board);
+			if(board.getReplyYn().equals("y"))
+				model.addAttribute("reply", rs.get(bno));
 			return "board_view";
 		} else {
 			return "wrong_password";

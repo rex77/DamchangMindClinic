@@ -27,9 +27,10 @@
 								</div>
 
 								<div class="custom-control custom-checkbox mb-3">
-									<input type="checkbox" name="autoLogin" class="custom-control-input"
+
+<!-- 	<input type="checkbox" name="autoLogin" class="custom-control-input"
 										id="customCheck1"> <label class="custom-control-label"
-										for="customCheck1">자동 로그인</label>
+										for="customCheck1">자동 로그인</label> -->								
 								</div>
 								<div class="error">
 								<c:out value="${error}"/>

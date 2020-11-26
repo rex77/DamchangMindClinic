@@ -41,3 +41,8 @@ thead>tr>th:nth-child(4) {
 	text-align: center;
 	width: 300px;
 }
+#btns {
+	width: 1200px;
+    margin: 20px auto;
+    text-align: right;
+}
