@@ -25,6 +25,10 @@ public class SecurityController {
 	@Autowired
 	BCryptPasswordEncoder encoder;
 	
+	/*
+	 * public String login(String error, String logout, Model model)
+	 * 로그인 페이지를 불러온다. 이전에 로그인을 실패한 기록이 있으면 에러를 표시한다.
+	 */
 	@GetMapping("/login")
 	public String login(String error, String logout, Model model) {
 		log.info("error: " + error);
@@ -39,10 +43,19 @@ public class SecurityController {
 		return "login";
 	}
 	
+	/*
+	 * public void signup(Model model)
+	 * 회원가입 페이지를 표시한다.
+	 */
 	@GetMapping("/signup")
 	public void signup(Model model) {
 	}
 
+	/*
+	 * public String signupProcess(@RequestParam("id") String id, @RequestParam("password") String password,
+			@RequestParam("username") String username, Model model)
+	 * 회원가입 프로세스를 진행한다. (패스워드 인코딩 후 signup메소드 호출)
+	 */
 	@PostMapping("/signup")
 	public String signupProcess(@RequestParam("id") String id, @RequestParam("password") String password,
 			@RequestParam("username") String username, Model model) {
@@ -52,6 +65,10 @@ public class SecurityController {
 		return "redirect:/login";
 	}
 
+	/*
+	 * public void accessDenied(Authentication auth, Model model)
+	 * 액세스 에러 페이지를 표시한다.
+	 */
 	@GetMapping("/accessError")
 	public void accessDenied(Authentication auth, Model model) {
 		log.info("access Denied: " + auth);
