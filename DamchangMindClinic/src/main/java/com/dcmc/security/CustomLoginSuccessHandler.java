@@ -11,6 +11,9 @@ import org.springframework.security.web.authentication.AuthenticationSuccessHand
 
 import lombok.extern.log4j.Log4j;
 
+/*
+ * 오직 리다이렉트만을 위한 로그인성공핸ㄴ들러
+ */
 @Log4j
 public class CustomLoginSuccessHandler implements AuthenticationSuccessHandler {@Override
 	public void onAuthenticationSuccess(HttpServletRequest request, HttpServletResponse response,

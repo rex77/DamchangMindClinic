@@ -5,7 +5,7 @@
 <%@include file="includes/admin_header.jsp"%>
 <link href="/resources/css/notice_view.css" rel="stylesheet"
 	type="text/css" />
-
+<script async charset="utf-8" src="//cdn.embedly.com/widgets/platform.js"></script>
 <div id="wrapper">
 	<div id="subtitle">공지사항</div>
 	<div id="content-wrapper">
@@ -21,7 +21,7 @@
 			</div>
 		</div>
 		<div id="content">
-			<c:out value="${board.content}" />
+			<c:out value="${board.content}" escapeXml="false"/>
 		</div>
 
 		<div id="btns">
@@ -34,5 +34,17 @@
 		</div>
 	</div>
 </div>
+<script>
+document.querySelectorAll( 'oembed[url]' ).forEach( element => {
+    // Create the <a href="..." class="embedly-card"></a> element that Embedly uses
+    // to discover the media.
+    const anchor = document.createElement( 'a' );
 
+    anchor.setAttribute( 'href', element.getAttribute( 'url' ) );
+    anchor.className = 'embedly-card';
+
+    element.appendChild( anchor );
+} );
+
+</script>
 <%@include file="includes/footer.jsp"%>

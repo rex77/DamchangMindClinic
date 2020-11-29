@@ -71,7 +71,7 @@
 				<li class="nav-item"><a href="/notice/list">담창정신건강의학과소식</a>
 					<ul class="depth02">
 						<li><a href="/notice/list">공지사항</a></li>
-						<li><a href="#">QnA</a></li>
+						<li><a href="/faq">FAQ</a></li>
 						<li><a href="/board/list">질문게시판</a></li>
 					</ul></li>
 		</nav>

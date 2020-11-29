@@ -13,6 +13,10 @@ import com.dcmc.service.UserService;
 
 import lombok.extern.log4j.Log4j;
 
+
+/*
+ * 스프링 시큐리티 관련 기능 + 회원 관련 기능을 담당하는 컨트롤러
+ */
 @Controller
 @Log4j
 public class SecurityController {

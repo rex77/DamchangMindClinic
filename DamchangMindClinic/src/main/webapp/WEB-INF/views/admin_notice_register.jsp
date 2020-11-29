@@ -10,6 +10,11 @@
 	type="text/css" />
 <link href="/resources/css/board_register.css" rel="stylesheet"
 	type="text/css" />
+	<!-- ckeditor -->
+<script src="https://cdn.ckeditor.com/ckeditor5/12.0.0/classic/ckeditor.js"></script>
+<style>
+.ck-editor__editable {min-height: 300px;}
+</style>
 
 <!-- 권한설정 -->
 <%@ page
@@ -54,7 +59,7 @@ if (principal != null && principal instanceof UserDAO) {
 								</li>
 								<li>
 									<div class="content">
-										<textarea name="content" placeholder="내용" class="write-memo"><c:out
+										<textarea id="editor" name="content" placeholder="내용" class="write-memo"><c:out
 												value='${board.content}' /></textarea>
 									</div>
 								</li>
@@ -84,4 +89,5 @@ if (principal != null && principal instanceof UserDAO) {
 				$("#form1").attr("action", "/admin/notice/modify");
 			$("#form1").attr("method", "post");
 </script>
+<script src="/resources/js/ckeditor.js"></script>
 <%@include file="includes/footer.jsp"%>

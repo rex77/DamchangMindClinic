@@ -7,6 +7,7 @@
 	type="text/css" />
 <link href="/resources/css/board_register.css" rel="stylesheet"
 	type="text/css" />
+	
 
 <div id="wrapper">
 	<div id="subtitle">질문게시판</div>
@@ -53,6 +54,7 @@
 											type="submit" value="확인" id="ok" class="write-ok-btn"></a>
 									</div>
 								</div>
+						<input type="hidden" name="bno" value="<c:if test='${board.bno == null }'>0</c:if><c:out value='${board.bno}'/>" />
 						<input type="hidden" name="origBno" value="<c:out value='${board.bno}'/>"/>
 						</form>
 					</div>
@@ -76,6 +78,5 @@ $("#form1").attr("method", "post");
 			$('#form1').submit();
 		}
 	});
-
 </script>
 <%@include file="includes/footer.jsp"%>

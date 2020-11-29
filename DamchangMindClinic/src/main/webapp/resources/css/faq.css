@@ -1,0 +1,28 @@
+#wrapper {
+	margin-top:100px;
+	font-family: 'Noto Sans KR', sans-serif;
+}
+
+#subtitle {
+	text-align:center;
+	padding: 75px 0;
+	background-image: url("../img/faq_subtitle.jpg");
+	background-position : center;
+	font-size: 30px;
+	color: white;
+}
+
+
+#content-wrapper {
+	margin: 100px auto;
+	text-align: center;
+}
+
+#content-wrapper > img {
+	margin : 0 auto;
+	margin-top : 30px;
+}
+
+#content-wrapper > img:first-child {
+	margin-top:0;
+}

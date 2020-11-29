@@ -40,6 +40,7 @@ public class HomeController {
 		return "index";
 	}
 	
+	//여기서부터는 전부 정적 페이지 매핑
 	
 	@RequestMapping(value = "/greetings", method = RequestMethod.GET)
 	public String greetings(Model model) {
@@ -98,4 +99,8 @@ public class HomeController {
 		return "child02";
 	}
 	
+	@RequestMapping(value = "/faq", method = RequestMethod.GET)
+	public String faq(Model model) {
+		return "faq";
+	}
 }

@@ -40,10 +40,7 @@ public class BoardServiceImpl implements BoardService {
 	public BoardDAO getSecretBoard(int bno, String password) {
 		// TODO Auto-generated method stub
 		BoardDAO board = mapper.read(bno);
-		if (password.equals(board.getPassword()))
-			return board;
-		else
-			return null;
+		return board;
 	}
 
 	@Override
