@@ -5,9 +5,9 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.dcmc.domain.BoardDAO;
+import com.dcmc.domain.BoardDTO;
 import com.dcmc.domain.Criteria;
-import com.dcmc.domain.BoardDAO;
+import com.dcmc.domain.BoardDTO;
 import com.dcmc.mapper.BoardMapper;
 
 import lombok.extern.log4j.Log4j;
@@ -19,32 +19,32 @@ public class BoardServiceImpl implements BoardService {
 	BoardMapper mapper;
 	
 	@Override
-	public List<BoardDAO> getList(Criteria cri) {
+	public List<BoardDTO> getList(Criteria cri) {
 		// TODO Auto-generated method stub
 		return mapper.getListWithCri(cri);
 	}
 
 	@Override
-	public void register(BoardDAO board) {
+	public void register(BoardDTO board) {
 		// TODO Auto-generated method stub
 		mapper.insert(board);
 	}
 
 	@Override
-	public BoardDAO get(int bno) {
+	public BoardDTO get(int bno) {
 		// TODO Auto-generated method stub
 		return mapper.read(bno);
 	}
 
 	@Override
-	public BoardDAO getSecretBoard(int bno, String password) {
+	public BoardDTO getSecretBoard(int bno, String password) {
 		// TODO Auto-generated method stub
-		BoardDAO board = mapper.read(bno);
+		BoardDTO board = mapper.read(bno);
 		return board;
 	}
 
 	@Override
-	public boolean modify(BoardDAO board) {
+	public boolean modify(BoardDTO board) {
 		// TODO Auto-generated method stub
 		return mapper.update(board);
 	}

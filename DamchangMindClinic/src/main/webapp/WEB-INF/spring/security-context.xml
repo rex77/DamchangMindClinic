@@ -28,8 +28,6 @@
 	<security:authentication-manager>
 		<security:authentication-provider
 			user-service-ref="userService">
-			<!-- <security:user-service> <security:user name="admin" password="{noop}admin" 
-				authorities="ROLE_ADMIN" /> </security:user-service> -->
 			<security:password-encoder
 				ref="bcryptPasswordEncoder" />
 		</security:authentication-provider>

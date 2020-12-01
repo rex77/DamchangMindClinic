@@ -3,18 +3,18 @@ package com.dcmc.mapper;
 import java.util.List;
 
 import com.dcmc.domain.Criteria;
-import com.dcmc.domain.NoticeDAO;
+import com.dcmc.domain.NoticeDTO;
 
 public interface NoticeMapper {
-	List<NoticeDAO> getList();
+	List<NoticeDTO> getList();
 
-	List<NoticeDAO> getListWithCri(Criteria cri);
+	List<NoticeDTO> getListWithCri(Criteria cri);
 
-	public NoticeDAO read(int bno);
+	public NoticeDTO read(int bno);
 
-	public void insert(NoticeDAO notice);
+	public void insert(NoticeDTO notice);
 
-	public boolean update(NoticeDAO notice);
+	public boolean update(NoticeDTO notice);
 
 	public boolean delete(int bno);
 

@@ -1,13 +1,13 @@
 package com.dcmc.mapper;
 
-import com.dcmc.domain.ReplyDAO;
+import com.dcmc.domain.ReplyDTO;
 
 public interface ReplyMapper {
-	public ReplyDAO read(int bno);
+	public ReplyDTO read(int bno);
 	
-	public void insert(ReplyDAO reply);
+	public void insert(ReplyDTO reply);
 	
-	public boolean update(ReplyDAO reply);
+	public boolean update(ReplyDTO reply);
 	
 	public boolean delete(int bno);
 }

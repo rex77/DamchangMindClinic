@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.dcmc.domain.Criteria;
-import com.dcmc.domain.NoticeDAO;
+import com.dcmc.domain.NoticeDTO;
 import com.dcmc.mapper.NoticeMapper;
 
 import lombok.extern.log4j.Log4j;
@@ -19,24 +19,24 @@ public class NorticeServiceImpl implements NoticeService {
 	NoticeMapper mapper;
 	
 	@Override
-	public List<NoticeDAO> getList(Criteria cri) {
+	public List<NoticeDTO> getList(Criteria cri) {
 		// TODO Auto-generated method stub
 		return mapper.getListWithCri(cri);
 	}
 
 	@Override
-	public void register(NoticeDAO notice) {
+	public void register(NoticeDTO notice) {
 		// TODO Auto-generated method stub
 		mapper.insert(notice);
 	}
 
 	@Override
-	public NoticeDAO get(int bno) {
+	public NoticeDTO get(int bno) {
 		return mapper.read(bno);
 	}
 
 	@Override
-	public boolean modify(NoticeDAO notice) {
+	public boolean modify(NoticeDTO notice) {
 		// TODO Auto-generated method stub
 		return mapper.update(notice);
 	}

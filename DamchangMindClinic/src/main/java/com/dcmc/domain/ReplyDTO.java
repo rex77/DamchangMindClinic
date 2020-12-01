@@ -9,7 +9,7 @@ import lombok.ToString;
 @Getter
 @Setter
 @ToString
-public class ReplyDAO {
+public class ReplyDTO {
 	private int rno;
 	private int bno;
 	private String content;

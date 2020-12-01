@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.dcmc.domain.BoardDAO;
+import com.dcmc.domain.BoardDTO;
 import com.dcmc.domain.Criteria;
 import com.dcmc.domain.PageDTO;
 import com.dcmc.service.BoardService;
@@ -52,7 +52,7 @@ public class BoardController {
 	@GetMapping("/view")
 	public String viewBoard(@RequestParam("bno") int bno, Model model) {
 		// secret board
-		BoardDAO board = bs.get(bno);
+		BoardDTO board = bs.get(bno);
 		if (board.getSecretYn().equals("y")) { //만약 본 게시글이 비밀글이라면
 			model.addAttribute("bno", bno);
 			return "password_view"; //패스워드 입력 페이지로 넘긴다
@@ -73,7 +73,7 @@ public class BoardController {
 	@PostMapping("/view")
 	public String passwordCheck(@RequestParam("password") String password, @RequestParam("bno") int bno, Model model) {
 
-		BoardDAO board = bs.get(bno);
+		BoardDTO board = bs.get(bno);
 		if (password == null) //오류 방지용 코드 : 비밀번호가 없는 비밀글이 있을 수가 있다. 그러나 뷰에서 무조건 비밀번호를 설정하게 개선함으로써 일어나지 않을 코드가 되었다.
 			password = "";
 
@@ -98,11 +98,11 @@ public class BoardController {
 	}
 
 	/*
-	 * public String register(BoardDAO board)
+	 * public String register(BoardDTO board)
 	 * 게시글 작성 페이지에서 작성한 게시글을 서버에 등록한다
 	 */
 	@PostMapping("/register")
-	public String register(BoardDAO board) {
+	public String register(BoardDTO board) {
 		System.out.println("secretYn : " + board.getSecretYn());
 		if (board.getSecretYn() == null) //체크박스는 y 하나밖에 없으니 비밀글을 체크하지 않은 경우 SecretYn은 null이 된다
 			board.setSecretYn("n");
@@ -119,7 +119,7 @@ public class BoardController {
 	 */
 	@GetMapping("/modify")
 	public String modifyView(@RequestParam("origBno") int bno, @RequestParam("password") String password, Model model) {
-		BoardDAO original = bs.get(bno);
+		BoardDTO original = bs.get(bno);
 		if (original.getPassword().equals(password)) { //게시글이 비밀글일 경우 비밀번호를 비교한다
 			System.out.println(original.getSecretYn());
 			model.addAttribute("board", original);
@@ -130,11 +130,11 @@ public class BoardController {
 	}
 	
 	/*
-	 * public String modify(@RequestParam("origBno") int bno, BoardDAO board) 
+	 * public String modify(@RequestParam("origBno") int bno, BoardDTO board) 
 	 * 게시글 수정 페이지에서 수정한 게시글을 서버에서도 수정한다
 	 */
 	@PostMapping("/modify")
-	public String modify(@RequestParam("origBno") int bno, BoardDAO board) {
+	public String modify(@RequestParam("origBno") int bno, BoardDTO board) {
 		if(board.getSecretYn()==null)
 			board.setSecretYn("n");
 		bs.modify(board);
@@ -148,7 +148,7 @@ public class BoardController {
 	 */
 	@PostMapping("/remove")
 	public String remove(@RequestParam("bno") int bno, @RequestParam("password") String password) {
-		BoardDAO original = bs.get(bno);
+		BoardDTO original = bs.get(bno);
 
 		if (original.getPassword().equals(password)) { //항상 패스워드를 체크한다
 			bs.remove(bno);

@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.dcmc.mapper.BoardMapper">
-
-	<resultMap type="com.dcmc.domain.BoardDAO" id="result">
+	<resultMap type="com.dcmc.domain.BoardDTO" id="result">
 		<result property="bno" column="bno" />
 		<result property="title" column="title" />
 		<result property="content" column="content" />
@@ -10,15 +9,17 @@
 		<result property="secretYn" column="secret_yn" />
 		<result property="password" column="password" />
 		<result property="writer" column="writer" />
-		<result property="registerDate" column="register_date" javaType="java.sql.Date" />
+		<result property="registerDate" column="register_date"
+			javaType="java.sql.Date" />
 		<result property="replyYn" column="reply_yn" />
 	</resultMap>
-	
+
 	<select id="getList" resultMap="result">
-		select /*+ INDEX_DESC(notice XPK질문게시판) */ *
+		select /*+ INDEX_DESC(notice
+		XPK질문게시판) */ *
 		from notice
-		</select>
-		
+	</select>
+
 	<select id="getListWithCri" resultMap="result">
 		<![CDATA[
 		select bno, title, content, show_yn, secret_yn, password, writer, register_date, reply_yn
@@ -28,25 +29,31 @@
 		)
 		where rn > (#{pageNum} - 1) * #{amount} 
 		]]>
-		</select>
+	</select>
 
 	<insert id="insert">
-		insert into board (bno, title, content, show_yn, secret_yn, password, writer, register_date, reply_yn)
-		values (seq_board.nextval , #{title}, #{content}, #{showYn}, #{secretYn}, #{password},
+		insert into board (bno, title, content, show_yn,
+		secret_yn, password, writer, register_date, reply_yn)
+		values
+		(seq_board.nextval , #{title}, #{content}, #{showYn}, #{secretYn},
+		#{password},
 		#{writer}, SYSDATE, #{replyYn} )
 	</insert>
 
 	<select id="read" resultMap="result">
-		select * from board where bno = #{bno}
+		select * from board where bno =
+		#{bno}
 	</select>
 
 	<update id="update">
 		update board
 		set title = #{title},
-		content = #{content},
+		content =
+		#{content},
 		writer = #{writer},
 		secret_yn = #{secretYn},
-		password = #{password}
+		password =
+		#{password}
 		where
 		bno = #{bno}
 	</update>
@@ -54,7 +61,8 @@
 	<update id="updateReplyYn">
 		update board
 		set reply_yn = #{replyYn}
-		where bno = #{bno}
+		where bno =
+		#{bno}
 	</update>
 
 	<update id="delete">

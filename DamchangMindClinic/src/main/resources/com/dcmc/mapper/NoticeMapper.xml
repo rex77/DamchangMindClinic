@@ -2,28 +2,34 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.dcmc.mapper.NoticeMapper">
 
-	<resultMap type="com.dcmc.domain.NoticeDAO" id="result">
+	<resultMap type="com.dcmc.domain.NoticeDTO" id="result">
 		<result property="bno" column="bno" />
 		<result property="title" column="title" />
 		<result property="content" column="content" />
 		<result property="showYn" column="show_yn" />
-		<result property="writer" column="writer" />
+		<result property="writer" column="username" />
 		<result property="registerDate" column="register_date" javaType="java.util.Date" />
 	</resultMap>
 
 	<select id="getList" resultMap="result">
 		select /*+ INDEX_DESC(notice XPK공지사항) */ *
 		from notice
+		
+		INNER JOIN
+		admin on notice.id = admin.id
 		</select>
 		
 	<select id="getListWithCri" resultMap="result">
 		<![CDATA[
-		select bno, title, content, writer, register_date
+		select bno, title, content, writer, register_date, username
 		from (
-		select /*+ INDEX_DESC(notice XPK공지사항) */ rownum rn, bno, title, content, show_yn, writer, register_date
-		from notice where show_yn='y' AND rownum <= #{pageNum} * #{amount}
-		)
-		where rn > (#{pageNum} - 1) * #{amount} 
+		select /*+ INDEX_DESC(notice XPK공지사항) */ rownum rn, bno, title, content, show_yn, writer, register_date, username
+		from notice a, admin b
+		where show_yn='y' AND rownum <= #{pageNum} * #{amount} AND a.writer = b.id
+		order by bno desc
+		) 
+		where rn > (#{pageNum}-1)* #{amount} 
+		
 		]]>
 		</select>
 

@@ -4,19 +4,19 @@ import java.util.List;
 
 import org.apache.ibatis.annotations.Param;
 
-import com.dcmc.domain.BoardDAO;
+import com.dcmc.domain.BoardDTO;
 import com.dcmc.domain.Criteria;
 
 public interface BoardMapper {
-	List<BoardDAO> getList();
+	List<BoardDTO> getList();
 
-	List<BoardDAO> getListWithCri(Criteria cri);
+	List<BoardDTO> getListWithCri(Criteria cri);
 
-	public BoardDAO read(int bno);
+	public BoardDTO read(int bno);
 
-	public void insert(BoardDAO notice);
+	public void insert(BoardDTO notice);
 
-	public boolean update(BoardDAO notice);
+	public boolean update(BoardDTO notice);
 
 	public boolean updateReplyYn(@Param("bno") int bno, @Param("replyYn") String replyYn);
 

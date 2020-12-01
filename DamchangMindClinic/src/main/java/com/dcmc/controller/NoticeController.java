@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.dcmc.domain.Criteria;
-import com.dcmc.domain.NoticeDAO;
+import com.dcmc.domain.NoticeDTO;
 import com.dcmc.domain.PageDTO;
 import com.dcmc.service.NoticeService;
 

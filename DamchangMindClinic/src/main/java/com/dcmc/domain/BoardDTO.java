@@ -9,7 +9,7 @@ import lombok.ToString;
 @Getter
 @Setter
 @ToString
-public class BoardDAO {
+public class BoardDTO {
 	private int bno;
 	private String title;
 	private String content;

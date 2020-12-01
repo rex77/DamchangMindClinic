@@ -15,14 +15,16 @@
 <%@ page
 	import="org.springframework.security.core.context.SecurityContextHolder"%>
 <%@ page import="org.springframework.security.core.Authentication"%>
-<%@ page import="com.dcmc.domain.UserDAO"%>
+<%@ page import="com.dcmc.domain.UserDTO"%>
 <%
 	Authentication auth = SecurityContextHolder.getContext().getAuthentication();
 
 Object principal = auth.getPrincipal();
 String name = "";
-if (principal != null && principal instanceof UserDAO) {
-	name = ((UserDAO) principal).getUsername();
+String nickname = "";
+if (principal != null && principal instanceof UserDTO) {
+	name = ((UserDTO) principal).getUsername();
+	nickname = ((UserDTO) principal).getNickname();
 } else {
 	name = "anonymousUser";
 }
@@ -42,8 +44,8 @@ if (principal != null && principal instanceof UserDAO) {
 							<ul class="write-list">
 								<li class="write-nickname">
 									<div class="write-nick">
-										<input type="text" class="nick" name="writer"
-											placeholder="닉네임" value="<%=name%>" />
+										<input type="text" class="nick" name="nick"
+											placeholder="닉네임" value="<%=nickname%>" />
 									</div>
 								</li>
 								<li>
@@ -63,6 +65,8 @@ if (principal != null && principal instanceof UserDAO) {
 									value="<c:out value='${board.bno}'/>" /> 
 									<input type="hidden"
 									name="rno" value="<c:if test='${reply.rno == null}'>0</c:if><c:out value='${reply.rno}'/>" />
+									<input type="hidden" name="writer"
+									value="<c:out value='<%=name %>'/>" />
 						</form>
 					</div>
 

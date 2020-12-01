@@ -3,7 +3,7 @@ package com.dcmc.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.dcmc.domain.ReplyDAO;
+import com.dcmc.domain.ReplyDTO;
 import com.dcmc.mapper.BoardMapper;
 import com.dcmc.mapper.ReplyMapper;
 
@@ -19,13 +19,13 @@ public class ReplyServiceImpl implements ReplyService {
 	BoardMapper bm;
 
 	@Override
-	public ReplyDAO get(int bno) {
+	public ReplyDTO get(int bno) {
 		// TODO Auto-generated method stub
 		return rm.read(bno);
 	}
 
 	@Override
-	public void register(ReplyDAO reply) {
+	public void register(ReplyDTO reply) {
 		// TODO Auto-generated method stub
 		reply.getWriter();
 		rm.insert(reply);
@@ -33,7 +33,7 @@ public class ReplyServiceImpl implements ReplyService {
 	}
 
 	@Override
-	public boolean modify(ReplyDAO reply) {
+	public boolean modify(ReplyDTO reply) {
 		// TODO Auto-generated method stub
 		return rm.update(reply);
 	}

@@ -7,13 +7,23 @@
 		values (#{id}, #{password}, #{username}, 'ROLE_ADMIN')
 	</insert>
 	
-	     <select id="selectUserById" resultType="com.dcmc.domain.UserDAO">
+	     <select id="selectUserById" resultType="com.dcmc.domain.UserDTO">
         <![CDATA[
             SELECT
                 *
             FROM
                 admin
             WHERE
+                id=#{id}
+        ]]>
+    </select>
+    
+    <select id="selectUserName">
+    <![CDATA[
+            SELECT
+                username
+                From admin
+                WHERE
                 id=#{id}
         ]]>
     </select>

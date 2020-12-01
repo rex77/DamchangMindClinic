@@ -2,17 +2,17 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.dcmc.mapper.ReplyMapper">
 
-	<resultMap type="com.dcmc.domain.ReplyDAO" id="result">
+	<resultMap type="com.dcmc.domain.ReplyDTO" id="result">
 		<result property="rno" column="rno" />
 		<result property="bno" column="bno" />
 		<result property="content" column="content" />
-		<result property="writer" column="writer" />
+		<result property="writer" column="username" />
 		<result property="registerDate" column="register_date" javaType="java.util.Date" />
 	</resultMap>
 
 
 	<select id="read" resultMap="result">
-		select * from reply where bno=#{bno}
+		select *, us from reply, admin where bno=#{bno} AND admin.id
 	</select>
 	
 	<insert id="insert">

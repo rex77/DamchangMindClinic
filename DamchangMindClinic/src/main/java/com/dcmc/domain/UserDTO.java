@@ -10,7 +10,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 import lombok.ToString;
 
 @ToString
-public class UserDAO implements UserDetails {
+public class UserDTO implements UserDetails {
 	private String id;
 	private String password;
 	private String username;

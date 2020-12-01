@@ -8,11 +8,11 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.dcmc.domain.BoardDAO;
+import com.dcmc.domain.BoardDTO;
 import com.dcmc.domain.Criteria;
-import com.dcmc.domain.NoticeDAO;
+import com.dcmc.domain.NoticeDTO;
 import com.dcmc.domain.PageDTO;
-import com.dcmc.domain.ReplyDAO;
+import com.dcmc.domain.ReplyDTO;
 import com.dcmc.service.BoardService;
 import com.dcmc.service.NoticeService;
 import com.dcmc.service.ReplyService;
@@ -79,7 +79,7 @@ public class AdminController {
 	 */
 	@GetMapping("/board/view") 
 	public String viewBoard(@RequestParam("bno") int bno, Model model) {
-		BoardDAO board = bs.get(bno);
+		BoardDTO board = bs.get(bno);
 		model.addAttribute("board", board);
 		if(board.getReplyYn().equals("y"))
 			model.addAttribute("reply", rs.get(bno));
@@ -108,11 +108,11 @@ public class AdminController {
 	}
 	
 	/*
-	 * public String registerReply(ReplyDAO reply, Model model)
+	 * public String registerReply(ReplyDTO reply, Model model)
 	 * 답글 작성 페이지에서 작성한 답글을 실제 서버에 등록하는 과정
 	 */
 	@PostMapping("/reply/register")
-	public String registerReply(ReplyDAO reply, Model model) {
+	public String registerReply(ReplyDTO reply, Model model) {
 		rs.register(reply);
 		String redirectUrl = "redirect:/admin/board/view?bno=" + reply.getBno();
 		return redirectUrl;	
@@ -130,11 +130,11 @@ public class AdminController {
 	}
 	
 	/*
-	 * public String ModifyReply(ReplyDAO reply, Model model)
+	 * public String ModifyReply(ReplyDTO reply, Model model)
 	 * 작성한 답글을 서버에서 수정한다
 	 */
 	@PostMapping("/reply/modify")
-	public String ModifyReply(ReplyDAO reply, Model model) {
+	public String ModifyReply(ReplyDTO reply, Model model) {
 		rs.modify(reply);
 		String redirectUrl = "redirect:/admin/board/view?bno=" + reply.getBno();
 		return redirectUrl;	
@@ -150,11 +150,11 @@ public class AdminController {
 	}
 	
 	/*
-	 * public String registerNotice(NoticeDAO notice)
+	 * public String registerNotice(NoticeDTO notice)
 	 * 작성한 공지사항을 서버에 등록한다
 	 */
 	@PostMapping("/notice/register") 
-	public String registerNotice(NoticeDAO notice) {
+	public String registerNotice(NoticeDTO notice) {
 		System.out.println(notice);
 		notice.setShowYn("y"); //ShowYn == delete 여부 (y가 non-delete)
 		ns.register(notice);
@@ -182,11 +182,11 @@ public class AdminController {
 	}
 	
 	/*
-	 * public String modify(@RequestParam("origBno") int bno, NoticeDAO notice)
+	 * public String modify(@RequestParam("origBno") int bno, NoticeDTO notice)
 	 * 작성한 글을 서버에 실제로 수정하는 과정
 	 */
 	@PostMapping("/notice/modify")
-	public String modify(@RequestParam("origBno") int bno, NoticeDAO notice) {
+	public String modify(@RequestParam("origBno") int bno, NoticeDTO notice) {
 		ns.modify(notice);
 		String redirectUrl = "redirect:/admin/notice/view?bno=" + bno; //개선사항 : notice.getBno()로 수정 가능, 그러나 기존에 base가 된 method가 param으로 bno를 따로 받아오는 형태를 취하고 있기 때문에 이러한 형태가 되었다
 		return redirectUrl;

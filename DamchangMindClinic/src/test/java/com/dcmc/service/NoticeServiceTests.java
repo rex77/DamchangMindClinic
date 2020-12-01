@@ -7,7 +7,7 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import com.dcmc.domain.Criteria;
-import com.dcmc.domain.NoticeDAO;
+import com.dcmc.domain.NoticeDTO;
 
 import lombok.extern.log4j.Log4j;
 
@@ -30,7 +30,7 @@ public class NoticeServiceTests {
 	
 	@Test
 	public void testRegister() {
-		NoticeDAO notice = new NoticeDAO();
+		NoticeDTO notice = new NoticeDTO();
 		notice.setTitle("5465");
 		notice.setContent("5465");
 		notice.setWriter("admin");
@@ -40,7 +40,7 @@ public class NoticeServiceTests {
 
 	@Test
 	public void testUpdate() {
-		NoticeDAO notice = new NoticeDAO();
+		NoticeDTO notice = new NoticeDTO();
 		notice.setBno(14);
 		notice.setTitle("바뀐 5465");
 		notice.setContent("바뀌어버린 5465");
